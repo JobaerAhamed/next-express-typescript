@@ -21,7 +21,7 @@ const authMiddleware = (req, res, next) => {
     const server = express();
 
     server.get("/about", authMiddleware, (req: Request, res: Response) => {
-      let params: ParsedUrlQuery = route("/album")(parse(req.url).query);
+      let params: ParsedUrlQuery = route("/about")(parse(req.url).query);
       return app.render(req, res, "/about", params);
     });
     server.all("*", (req: Request, res: Response) => {
